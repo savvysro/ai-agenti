@@ -16,8 +16,8 @@ Toto zadání počítá s agentem běžícím **bez `--dangerously-skip-permissi
 ## 2. Časový plán
 
 - **03:00** – noční audit: sběr faktů + CVE analýza → report na disk (diff oproti včerejšku)
-- **07:30** – failsafe: kontrola, že dnešní report vznikl → pokud ne, e-mail s upozorněním
-- **07:45** – ranní report na e-mail `lukes@savvy.cz`
+- **07:30** – failsafe: kontrola, že dnešní report vznikl → pokud ne, upozornění do Telegramu
+- **07:45** – ranní report do Telegramu (stejný chat, přes který se zadává toto zadání)
 
 ## 3. Pravidlo odesílání
 
@@ -42,7 +42,7 @@ Toto zadání počítá s agentem běžícím **bez `--dangerously-skip-permissi
 
 Diff faktů oproti předchozímu dni, dohledání relevantních CVE k běžícím verzím (NVD/OSV API), jen k tomu, co se skutečně týká daného stacku.
 
-## 6. Formát reportu (e-mail)
+## 6. Formát reportu (Telegram)
 
 Vše v pořádku:
 
@@ -64,11 +64,11 @@ Nalezené problémy:
 
 ## 7. Failsafe
 
-Pokud v 07:30 chybí dnešní report, pošle se e-mail: „⚠️ Noční bezpečnostní audit dnes neproběhl."
+Pokud v 07:30 chybí dnešní report, pošle se do Telegramu zpráva: „⚠️ Noční bezpečnostní audit dnes neproběhl."
 
 ## 8. Doručení
 
-E-mail přes SMTP relay `smtp.savvy.cz` (odesílatel `lukes@savvy.cz` nebo `info@savvy.cz`), příjemce `lukes@savvy.cz`. Žádný externí bot ani třetí kanál.
+Telegram – **stejný bot/chat, který se používá pro toto zadání a běžnou komunikaci s uživatelem**, ne nový ani jinak neověřený bot. Token a chat_id se použijí ty, které už tato integrace používá; pokud se zakládá nový bot, jeho token/chat_id musí uživatel sám potvrdit jako svůj vlastní. Žádný jiný/třetí kanál.
 
 ## 9. Setup checklist
 
